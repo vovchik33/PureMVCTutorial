@@ -1,0 +1,1 @@
+Simple example how to add external libraries for logging.

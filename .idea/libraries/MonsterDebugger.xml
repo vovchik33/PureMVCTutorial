@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MonsterDebugger" type="flex">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Lib/MonsterDebugger.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
