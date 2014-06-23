@@ -2,16 +2,17 @@
  * Created by vladimirkravchenko on 6/24/14.
  */
 package {
+import controller.StartCommand;
 import controller.TestCommand;
-import controller.TestMacroCommand;
 
-import org.as3commons.logging.api.getLogger;
+import model.TestProxy;
+
 import org.puremvc.as3.interfaces.IFacade;
 import org.puremvc.as3.patterns.facade.Facade;
 
 public class ApplicationFacade extends Facade implements IFacade {
+    public static const START_COMMAND:String = "controller.StartCommand";
     public static const TEST_COMMAND:String = "TestCommand";
-    public static const TESTMACRO_COMMAND:String = "TestMacroCommand";
 
     public static function getInstance():ApplicationFacade {
         if (instance == null) {
@@ -22,20 +23,17 @@ public class ApplicationFacade extends Facade implements IFacade {
 
     override protected function initializeController():void {
         super.initializeController();
-        getLogger("ApplicationFacade").info("ApplicationFacade initializeController()");
 
-        registerCommand(TEST_COMMAND, TestCommand);
-        registerCommand(TESTMACRO_COMMAND, TestMacroCommand);
+        registerCommand(START_COMMAND, StartCommand);
+        registerCommand(TestProxy.CHANGED, TestCommand);
+
+        registerProxy(new TestProxy());
+        registerProxy(new TestProxy("OtherTestProxy", "otherTestData"));
     }
 
-
-    public function testCommand(application:Object):void {
-        sendNotification(TEST_COMMAND, application);
+    public function startCommand(application:Object):void {
+        sendNotification(START_COMMAND, application);
     }
-
-    public function testMacroCommand(application:Object):void {
-        sendNotification(TESTMACRO_COMMAND, application);
-    }
-
 }
+
 }
