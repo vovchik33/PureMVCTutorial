@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="Lesson_0001">
+  <component name="FlexBuildConfigurationManager" active="Lesson_0005">
     <configurations>
-      <configuration name="Lesson_0001" pure-as="true" main-class="Main" output-file=".swf">
+      <configuration name="Lesson_0005" pure-as="true" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/../out/production/Lesson_0005">
         <dependencies target-player="14.0">
           <entries>
             <entry library-name="as3commons-logging-2.7" library-level="project">
